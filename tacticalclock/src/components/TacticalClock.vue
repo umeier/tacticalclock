@@ -22,8 +22,8 @@ export default {
     setTime() {
       setInterval(() => {
         const date = new Date()
-        this.days = date.getDate()
-        this.hours = date.getHours()
+        this.days = this.checkSingleDigit(date.getDate())
+        this.hours = this.checkSingleDigit(date.getHours())
         this.minutes = this.checkSingleDigit(date.getMinutes())
         this.months = this.getMonthText(date.getMonth())
         this.years = date.getFullYear().toString().slice(-2)
@@ -44,12 +44,6 @@ export default {
 </script>
 
 <style scoped>
-@font-face {
-  font-family: 'MyLubalin';
-  src: url("/fonts/LubalinGraphStd/LubalinGraphStd-Demi.woff") format('woff'),
-  url("/fonts/LubalinGraphStd/LubalinGraphStd-Demi.woff2") format('woff2');
-}
-
 .tclock {
   position: fixed; /* or absolute */
   top: 50%;

@@ -16,7 +16,10 @@ import (
 var distFolder embed.FS
 
 func main() {
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		AppName:      "TacticalClock alpha",
+		ServerHeader: "TacticalClock",
+	})
 
 	app.Use("/", filesystem.New(filesystem.Config{
 		Root:       http.FS(distFolder),

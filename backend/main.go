@@ -12,8 +12,8 @@ import (
 	"syscall"
 )
 
-//go:embed dist/*
-var distFolder embed.FS
+//go:embed frontend/*
+var frontendFolder embed.FS
 
 func main() {
 	app := fiber.New(fiber.Config{
@@ -22,8 +22,8 @@ func main() {
 	})
 
 	app.Use("/", filesystem.New(filesystem.Config{
-		Root:       http.FS(distFolder),
-		PathPrefix: "dist",
+		Root:       http.FS(frontendFolder),
+		PathPrefix: "frontend",
 	}))
 
 	// Listen from a different goroutine

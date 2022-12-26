@@ -15,9 +15,11 @@ import (
 //go:embed frontend/*
 var frontendFolder embed.FS
 
+var version = "0.0.0"
+
 func main() {
 	app := fiber.New(fiber.Config{
-		AppName:      "TacticalClock alpha",
+		AppName:      "TacticalClock " + version,
 		ServerHeader: "TacticalClock",
 	})
 

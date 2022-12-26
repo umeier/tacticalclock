@@ -10,7 +10,7 @@ LDFLAGS = -s -w
 all: frontend backend
 
 .PHONY: backend
-backend: frontend release compress
+backend: frontend release
 
 .PHONY: release
 release: $(PLATFORMS)
@@ -18,11 +18,7 @@ release: $(PLATFORMS)
 $(PLATFORMS):
 	cd backend && GOOS=$(os) GOARCH=$(arch) go build -ldflags '$(LDFLAGS)' -o 'dist/$(os)-$(arch)/'
 
-.PHONY: compress
-compress:
-	find backend/dist/ -type f -exec upx {} \;
-
-.PHONY: frontend frontend-build frontend-install
+.PHONY: frontend-build frontend-install
 frontend: frontend-install frontend-build
 
 frontend-install:

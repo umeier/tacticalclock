@@ -5,10 +5,8 @@ pages:
     - amd64
   image: python:3.10-alpine
   script:
-    - cd doc
-    - pip install -r requirements.txt
-    - sphinx-build -b html . ../pages
-    - cd ./..
+    - pip install -r doc/requirements.txt
+    - sphinx-build -b html doc public
   artifacts:
     paths:
       - public

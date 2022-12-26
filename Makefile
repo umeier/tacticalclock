@@ -30,3 +30,7 @@ frontend-install:
 
 frontend-build:
 	cd tacticalclock && npm run build
+
+.PHONY: clean
+clean:
+	cd backend && rm -rf dist/ && rm -rf frontend/

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'LubalinLocal';
+    src: url("/fonts/LubalinGraphStd-Demi.woff") format('woff'),
+    url("/fonts/LubalinGraphStd-Demi.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'RepetitionScrolling';
+    src: url("/fonts/RepetitionScrolling.woff") format('woff'),
+    url("/fonts/RepetitionScrolling.woff2") format('woff2');
+}
+
+body {
+    background-color: black;
+}

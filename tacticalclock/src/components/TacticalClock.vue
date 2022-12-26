@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <div class="tclock">
-      <div v-if="years">{{ days }}<span class="time">{{ hours }}{{ minutes }}</span><span class="seconds">{{ seconds }}</span><span class="tz">{{ timezone }}</span>{{ months }}{{ years }}</div>
+      <div v-if="years">{{ days }}<span class="time">{{ hours }}{{ minutes }}</span><span class="seconds">{{
+          seconds
+        }}</span><span class="tz">{{ timezone }}</span>{{ months }}{{ years }}
+      </div>
       <div v-else>Initializing</div>
     </div>
   </div>
@@ -56,24 +59,30 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .tclock {
-  position: fixed; /* or absolute */
+  padding: .25em 1em 0;
+  position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
   font-size: 10vw;
-  font-family: MyLubalin, sans-serif;
+  font-family: RepetitionScrolling, monospace;
+  color: orangered;
+
+  .time {
+    font-size: larger;
+  }
+
+  .seconds {
+    font-size: smaller;
+    color: darkred;
+  }
+
+  .tz {
+    color: darkred;
+  }
+
 }
-.time {
-  font-size: larger;
-}
-.seconds {
-  font-size: smaller;
-  color: gray;
-}
-.tz {
-  color: gray;
-}
+
 </style>

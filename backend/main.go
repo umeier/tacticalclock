@@ -15,7 +15,7 @@ import (
 //go:embed frontend/*
 var frontendFolder embed.FS
 
-var version = "0.1.0-dev0"
+var version = "0.1.0-dev1"
 
 func main() {
 	app := fiber.New(fiber.Config{
